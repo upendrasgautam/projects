@@ -1,0 +1,36 @@
+SETUP the GitHub - https://youtu.be/gbJn2Ls2QsI?list=PLZoTAELRMXVPS-dOaVbAux22vzqdgoGhG
+==============================================================
+1) Open Anaconda Command Prompt
+2) use cd C:\Users\Sony\Desktop\DataScienceAI\Projects\MLProject and Enter
+3) Type "code ." and Enter 
+4) Visual Studio code will open otherwise open Pycharm
+5) go to terminal menu and click on new terminal in VS code
+6) Create the environment and instal package
+7) type "conda create -p venv python==3.8 -y" in terminal . venv folder gets created
+
+8) Go to GitHUb. Create a repository
+9) After creating the repository, automatically some commands will be generated
+10) paste one by one command into
+
+git init
+
+11) create README.md folder in Project
+12) Use the command in terminal
+
+git add README.md
+git commit -m "First Commit"
+
+git status
+
+git branch -M main
+
+git remote add origin https://github.com/upendrasgautam/projects.git
+
+13) Use git configuration command
+
+git config --global user.name "Upendra Singh"
+git config --global user.email u.gautam2006@gmail.com
+
+git push -u origin main
+
+14) 
