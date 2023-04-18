@@ -38,15 +38,17 @@ class ModelTrainer:
                 test_array[:, :-1],
                 test_array[:, -1]
             )
+
             models = {
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
-                "XGBRegressor": XGBRegressor(),
-                "CatBoosting Regressor": CatBoostRegressor(verbose=False),
-                "AdaBoost Regressor": AdaBoostRegressor(),
+                #"XGBRegressor": XGBRegressor(),
+                #"CatBoosting Regressor": CatBoostRegressor(verbose=False),
+                #"AdaBoost Regressor": AdaBoostRegressor(),
             }
+
             params = {
                 "Decision Tree": {
                     'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -85,13 +87,17 @@ class ModelTrainer:
 
             }
 
-            model_report: dict = evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
-                                                 models=models, param=params)
+            logging.info("model_report Initializing - started")
+            model_report: dict = evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models, param=params)
 
-            ## To get best model score from dict
+            logging.info("model_report Initializing - Finished")
+
+            ''' To get best model score from dict'''
             best_model_score = max(sorted(model_report.values()))
 
-            ## To get best model name from dict
+            '''
+            To get best model name from dict
+            '''
 
             best_model_name = list(model_report.keys())[
                 list(model_report.values()).index(best_model_score)
@@ -111,10 +117,6 @@ class ModelTrainer:
 
             r2_square = r2_score(y_test, predicted)
             return r2_square
-
-
-
-
 
         except Exception as e:
             raise CustomException(e, sys)

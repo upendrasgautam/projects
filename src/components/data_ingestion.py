@@ -32,7 +32,7 @@ class DataIngestion:
 
             logging.info(os.path.dirname(os.path.abspath(__file__)))
 
-            df = pd.read_csv("notebook\data\stud.csv")
+            df = pd.read_csv("C:\\Users\\Sony\\Desktop\\DataScienceAI\\Projects\\MLProject\\notebook\\data\\stud.csv")
             logging.info('Read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
@@ -66,3 +66,4 @@ if __name__ == "__main__":
 
     modeltrainer = ModelTrainer()
     print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
+    
